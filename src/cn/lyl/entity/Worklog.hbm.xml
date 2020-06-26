@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.hibernate.tutorial.hbm">
+
+	<class name="cn.lyl.entity.Worklog" table="Worklog">
+		<id name="l_id">
+			<generator class="native"></generator>
+		</id>
+		<many-to-one name="employee" class="cn.lyl.entity.Employee" column="empcode"></many-to-one>
+		<property name="l_name" length="20"></property>
+		<property name="l_part" length="20"></property>
+		<property name="l_found" length="20"></property>
+		<property name="l_cutsname" length="20"></property>
+		<property name="l_type" length="20"></property>
+		<property name="l_level" length="20"></property>
+		<property name="l_start" length="20"></property>
+		<property name="l_end" length="20"></property>
+		<property name="l_status" length="20"></property>
+		<property name="l_theme" length="20"></property>
+		<property name="l_money" length="20"></property>
+		<property name="l_detail" type="text"></property>
+		
+		<property name="l_extend1"></property>
+		<property name="l_extend2"></property>
+		<property name="l_extend3"></property>
+		<property name="l_extend4"></property>
+		<property name="l_extend5"></property>
+	</class>
+
+</hibernate-mapping>

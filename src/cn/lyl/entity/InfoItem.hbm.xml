@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.hibernate.tutorial.hbm">
+
+	<class name="cn.lyl.entity.InfoItem" table="InfoItem">
+		<id name="i_id">
+			<generator class="native"></generator>
+		</id>
+		<property name="i_info" length="20"></property>
+		<many-to-one name="dataInfo" class="cn.lyl.entity.DataInfo" column="icode" ></many-to-one>
+		<property name="i_other" length="20"></property>
+		<property name="i_extend1"></property>
+		<property name="i_extend2"></property>
+		<property name="i_extend3"></property>
+	</class>
+
+</hibernate-mapping>

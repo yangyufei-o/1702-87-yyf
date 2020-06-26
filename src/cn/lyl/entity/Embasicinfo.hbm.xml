@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.hibernate.tutorial.hbm">
+
+	<class name="cn.lyl.entity.Embasicinfo" table="Embasicinfo">
+		<id name="e_id">
+			<generator class="native"></generator>
+		</id>
+		<many-to-one name="employee" class="cn.lyl.entity.Employee" column="empcode"></many-to-one>
+		<property name="e_school" length="20"></property>
+		<property name="e_maxeducate" length="20"></property>
+		<property name="e_major" length="20"></property>
+		<property name="e_face" length="20"></property>
+		<property name="e_nation" length="20"></property>
+		<property name="e_marry" length="20"></property>
+		<property name="e_identity" length="20"></property>
+		<property name="e_detail" length="50"></property>
+		<property name="e_country" length="20"></property>
+		<property name="e_province" length="20"></property>
+		<property name="e_city" length="20"></property>
+		<property name="e_county" length="20"></property>
+		<property name="e_lvision" length="20"></property>
+		<property name="e_rvision" length="20"></property>
+		<property name="e_height" length="20"></property>
+		<property name="e_weight" length="20"></property>
+		<property name="e_health" length="20"></property>
+		<property name="e_healthm" length="20"></property>
+		<property name="e_self" type="text"></property>
+		<property name="e_like" length="20"></property>
+		<property name="e_jobvista" length="20"></property>
+		<property name="e_picurl" length="20"></property>
+		
+		<property name="e_extend1"></property>
+		<property name="e_extend2"></property>
+		<property name="e_extend3"></property>
+		<property name="e_extend4"></property>
+		<property name="e_extend5"></property>
+	</class>
+
+</hibernate-mapping>

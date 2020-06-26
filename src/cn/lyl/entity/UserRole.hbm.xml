@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.hibernate.tutorial.hbm">
+
+	<class name="cn.lyl.entity.UserRole" table="UserRole">
+		<id name="u_id">
+			<generator class="native"></generator>
+		</id>
+		<property name="u_name" length="30"></property>
+		<property name="u_department" length="30"></property>
+		<property name="u_adddepartment" length="30"></property>
+		<property name="u_deletedepartment" length="30"></property>
+		<property name="u_updatedepartment" length="30"></property>
+		<property name="u_employee" length="30"></property>
+		<property name="u_addemployee" length="30"></property>
+		<property name="u_deleteemployee" length="30"></property>
+		<property name="u_updateemployee" length="30"></property>
+		<property name="u_datainfo" length="30"></property>
+		<property name="u_worklog" length="30"></property>
+		<property name="u_addworklog" length="30"></property>
+		<property name="u_updateworklog" length="30"></property>
+		<property name="u_deleteworklog" length="30"></property>
+		<property name="u_workplane" length="30"></property>
+		<property name="u_addplane" length="30"></property>
+		<property name="u_updateplane" length="30"></property>
+		<property name="u_deleteworkplane" length="30"></property>
+		<property name="u_worksummary" length="30"></property>
+		<property name="u_addworksummary" length="30"></property>
+		<property name="u_updateworksummary" length="30"></property>
+		<property name="u_deleteworksummary" length="30"></property>
+		<property name="u_personaltask" length="30"></property>
+		<property name="u_addpersonaltask" length="30"></property>
+		<property name="u_updatepersonaltask" length="30"></property>
+		<property name="u_deletepersonaltask" length="30"></property>
+		<property name="u_alltask" length="30"></property>
+		<property name="u_addalltask" length="30"></property>
+		<property name="u_updatealltask" length="30"></property>
+		<property name="u_deletealltask" length="30"></property>
+		<property name="u_othertask" length="30"></property>
+		<property name="u_addothertask" length="30"></property>
+		<property name="u_updateothertask" length="30"></property>
+		<property name="u_deleteothertask" length="30"></property>
+		<property name="u_customer" length="30"></property>
+		<property name="u_addcustomer" length="30"></property>
+		<property name="u_updatecustomer" length="30"></property>
+		<property name="u_deletecustomer" length="30"></property>
+		<property name="u_customerinfo" length="30"></property>
+		<property name="u_systemads" length="30"></property>
+		<property name="u_addsystemads" length="30"></property>
+		<property name="u_updatesystemads" length="30"></property>
+		<property name="u_deletesystemads" length="30"></property>
+		<property name="u_systemlog" length="30"></property>
+		<property name="u_roleinfo" length="30"></property>
+		<property name="u_addroleinfo" length="30"></property>
+		<property name="u_updateroleinfo" length="30"></property>
+		<property name="u_deleteroleinfo" length="30"></property>
+		<property name="u_extend1" length="30"></property>
+		<property name="u_extend2" length="30"></property>
+		<property name="u_extend3" length="30"></property>
+		<property name="u_extend4" length="30"></property>
+		<property name="u_extend5" length="30"></property>
+		<property name="u_extend6" length="30"></property>
+		<property name="u_extend7" length="30"></property>
+		<property name="u_extend8" length="30"></property>
+		<property name="u_extend9" length="30"></property>
+	</class>
+
+</hibernate-mapping>

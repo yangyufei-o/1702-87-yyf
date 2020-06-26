@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.hibernate.tutorial.hbm">
+
+	<class name="cn.lyl.entity.Employee" table="Employee">
+		<id name="e_code" >
+		</id>
+		<property name="e_name" length="20"></property>
+		<many-to-one name="department" class="cn.lyl.entity.Department" column="partcode"></many-to-one>
+		<property name="e_id" length="20"></property>
+		<property name="e_birth" length="20"></property>
+		<property name="e_sex" length="20"></property>
+		<property name="e_job" length="20"></property>
+		<property name="e_post" length="20"></property>
+		<property name="e_jobfunctions" length="20"></property>
+		<property name="e_tel" length="20"></property>
+		<property name="e_phone" length="20"></property>
+		<property name="e_address" length="20"></property>
+		<property name="e_qq" length="20"></property>
+		<property name="e_mail" length="20"></property>
+		<property name="e_start" length="20"></property>
+		<property name="e_end" length="20"></property>
+		<property name="e_status" length="20"></property>
+		<property name="e_duty" length="20"></property>
+		<property name="e_extend1" ></property>
+		<property name="e_extend2" ></property>
+		<property name="e_extend3" ></property>
+		<property name="e_extend4" ></property>   <!--角色代码  -->
+		<property name="e_extend5" ></property>   <!--密码  -->
+		
+		<set name="setCustomer" inverse="false" cascade="save-update,delete" fetch="select" lazy="extra">
+			<key column="empcode"/>
+			<one-to-many class="cn.lyl.entity.Customer"/>
+		</set>
+		
+		<set name="setWorkTask" inverse="false" cascade="save-update,delete" fetch="select" lazy="extra">
+			<key column="empcode"/>
+			<one-to-many class="cn.lyl.entity.WorkTask"/>
+		</set>
+		
+		<set name="setWorkPlane" inverse="false" cascade="save-update,delete" fetch="select" lazy="extra">
+			<key column="empcode"/>
+			<one-to-many class="cn.lyl.entity.WorkPlane"/>
+		</set>		
+		
+		<set name="setWorkSummary" inverse="false" cascade="save-update,delete" fetch="select" lazy="extra">
+			<key column="empcode"/>
+			<one-to-many class="cn.lyl.entity.WorkSummary"/>
+		</set>		
+		
+		<set name="setWorklog" inverse="false" cascade="save-update,delete" fetch="select" lazy="extra">
+			<key column="empcode"/>
+			<one-to-many class="cn.lyl.entity.Worklog"/>
+		</set>
+		
+		<set name="setEmbasicinfo" inverse="false" cascade="save-update,delete" fetch="select" lazy="extra">
+			<key column="empcode"/>
+			<one-to-many class="cn.lyl.entity.Embasicinfo"/>
+		</set>
+			
+		<set name="setEmworkepr" inverse="false" cascade="save-update,delete" fetch="select" lazy="extra">
+			<key column="empcode"/>
+			<one-to-many class="cn.lyl.entity.Emworkepr"/>
+		</set>	
+						
+	</class>
+</hibernate-mapping>

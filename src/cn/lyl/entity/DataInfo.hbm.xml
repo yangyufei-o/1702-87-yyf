@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.hibernate.tutorial.hbm">
+
+	<class name="cn.lyl.entity.DataInfo" table="DataInfo">
+		<id name="d_code">
+			<generator class="native"></generator>
+		</id>
+		<property name="d_name" length="20"></property>
+		<property name="d_extend1"></property>
+		<property name="d_extend2"></property>
+		<property name="d_extend3"></property>
+		
+		<set name="setInfoItem" inverse="false" cascade="save-update,delete" fetch="select" lazy="extra">
+			<key column="icode"/>
+			<one-to-many class="cn.lyl.entity.InfoItem"/>
+		</set>	
+	</class>
+</hibernate-mapping>

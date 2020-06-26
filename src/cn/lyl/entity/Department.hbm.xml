@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.hibernate.tutorial.hbm">
+
+	<class name="cn.lyl.entity.Department" table="Department">
+		<id name="d_code">
+			
+		</id>
+		<property name="d_id" length="20" />
+		<property name="d_name" length="20"/>
+		<property name="d_helpcode" length="20"/>
+		<property name="d_principal" length="20"/>
+		<property name="d_phone" length="20"/>
+		<property name="d_num" length="10"/>
+		<property name="d_extend1"/>
+		<property name="d_extend2"/>
+		<property name="d_extend3"/>
+		<property name="d_extend4"/>
+		<property name="d_extend5"/>
+		
+		<set name="setEmployee" inverse="true" cascade="save-update,delete">
+			<key column="partcode"/>
+			<one-to-many class="cn.lyl.entity.Employee"/>
+		</set>
+	</class>
+</hibernate-mapping>

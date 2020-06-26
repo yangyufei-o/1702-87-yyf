@@ -1,0 +1,5 @@
+	1：任何一个类型的对象在使用注入方式实例化之前，这个类必须是实例化过的，也就是通过注解实例化过了
+	2:struts2如何获取url传过来的值  url传的值的name用重了
+	3：service不能实现接口，一实现接口就服务器启动失败
+	
+<s:iterator value="listc"><option value="<s:property value='i_info'/>"><s:property value="i_info"/></option></s:iterator>

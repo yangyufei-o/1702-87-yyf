@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.hibernate.tutorial.hbm">
+
+	<class name="cn.lyl.entity.WorkPlane" table="WorkPlane">
+		<id name="p_id">
+			<generator class="native"></generator>
+		</id>
+		<property name="p_name" length="20"></property>
+		<many-to-one name="employee" class="cn.lyl.entity.Employee" column="empcode"></many-to-one>
+		<property name="p_part" length="20"></property>
+		<property name="p_type" length="20"></property>
+		<property name="p_start" length="20"></property>
+		<property name="p_end" length="20"></property>
+		<property name="p_theme" length="20"></property>
+		<property name="p_detail" type="text"></property>
+		<property name="p_status" length="20"></property>
+		<property name="p_extend1"></property>
+		<property name="p_extend2"></property>
+		<property name="p_extend3"></property>
+		<property name="p_extend4"></property>
+		<property name="p_extend5"></property>
+	</class>
+
+</hibernate-mapping>

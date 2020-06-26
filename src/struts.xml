@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="false" />
+    
+    <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+    
+	<package name="main" extends="struts-default" namespace="/">
+<!-- 		1声明自定义的拦截器 -->
+		
+		
+		<interceptors>
+			<interceptor name="logininterceptor" class="cn.lyl.tool.MethodInterceptor"></interceptor>
+		</interceptors>
+		
+		<global-results>
+			<result name="pleaselogin">/pleaselogin.html</result>
+		</global-results>
+		
+		<action name="login_*" class="cn.lyl.action.LoginAction" method="{1}">
+			<result name="success">/crm.jsp</result>
+			<result name="tologin" >/login.jsp</result>
+			<result name="pleaselogin">/pleaselogin.html</result>
+		</action>
+		
+		<action name="bumen_*" class="departmentAction" method="{1}">
+			<interceptor-ref name="logininterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="find">/DRdepartment.jsp</result>
+			<result name="update">/UCdepartment.jsp</result>
+			<result name="delete">/bumen_find</result>
+		</action>
+		
+		<action name="yuangong_*" class="employeeAction" method="{1}">
+			<interceptor-ref name="logininterceptor">
+				<param name="excludeMethods">register,saveNewEmp</param>
+				<param name="includeMethods">save,reset,add,find,findby,delete,chaxun</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			
+			<result name="find">/DRemployee.jsp</result>
+			<result name="delete">/yuangong_find</result>
+			<result name="update">/UCemployee.jsp</result>
+			<result name="register">/register.jsp</result>
+			<result name="tologin" type="redirectAction">/login_login</result>
+			<result name="reset">/systemset.jsp</result>
+		</action>
+		
+		<action name="kehu_*" class="customerAction" method="{1}">
+			<interceptor-ref name="logininterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="find">/DRcustomer.jsp</result>			
+			<result name="delete">/kehu_find</result>			
+			<result name="update">/UCcustomer.jsp</result>
+		</action>
+		
+		<action name="lianxiren_*" class="linkManAction" method="{1}">
+			<interceptor-ref name="logininterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>		
+			<result name="find">/DRlinkman.jsp</result>
+			<result name="delete">/lianxiren_findall</result>
+			<result name="update">/UClinkman.jsp</result>
+			<result name="add">/UClinkman.jsp</result>
+		</action>
+		
+		<action name="rizhi_*" class="workLogAction" method="{1}">
+			<interceptor-ref name="logininterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="find">/DRworklog.jsp</result>
+			<result name="add">/UCworklog.jsp</result>
+			<result name="delete">/rizhi_find</result>
+			<result name="update">/UCworklog.jsp</result>		
+		</action>
+		
+		<action name="shuju_*" class="dataInfoAction" method="{1}">
+			<interceptor-ref name="logininterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="add">/UCdatainfo.jsp</result>
+			<result name="find">/DRdatainfo.jsp</result>
+			<result name="delete">/shuju_find</result>
+		</action>
+		
+		<action name="ziliao_*" class="infoItemAction" method="{1}">
+			<interceptor-ref name="logininterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="add">/UCinfoitem.jsp</result> 
+			<result name="find">/DRinfoitem.jsp</result>
+			<result name="update">/UCinfoitem.jsp</result>
+		</action>
+		
+		<action name="xitongrizhi_*" class="systemLogAction" method="{1}">
+			<interceptor-ref name="logininterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="find">/DRsystemlog.jsp</result>
+		</action>
+		
+		<action name="juese_*" class="userRoleAction" method="{1}">
+			<interceptor-ref name="logininterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="find">/DRuserrole.jsp</result>
+			<result name="update">/userrole.jsp</result>
+		</action>
+	</package>
+</struts>

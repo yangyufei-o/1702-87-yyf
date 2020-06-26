@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.hibernate.tutorial.hbm">
+
+	<class name="cn.lyl.entity.Emworkepr" table="Emworkepr">
+		<id name="e_id">
+			<generator class="native"></generator>
+		</id>
+		<many-to-one name="employee" class="cn.lyl.entity.Employee" column="empcode"></many-to-one>
+		<property name="e_start" length="20"></property>
+		<property name="e_end" length="20"></property>
+		<property name="e_firm" length="20"></property>
+		<property name="e_part" length="20"></property>
+		<property name="e_job" length="20"></property>
+		<property name="e_duty" length="20"></property>
+		<property name="e_extend1"></property>
+		<property name="e_extend2"></property>
+		<property name="e_extend3"></property>
+		<property name="e_extend4"></property>
+		<property name="e_extend5"></property>
+
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.hibernate.tutorial.hbm">
+
+
+	<class name="cn.lyl.entity.Customer" table="Customer">
+		<id name="c_code">
+		</id>
+		<many-to-one name="employee" class="cn.lyl.entity.Employee" column="empcode"/>
+		<property name="c_rersource" length="20"></property>
+		<property name="c_name" length="20"></property>
+		<property name="c_category" length="20"></property>
+		<property name="c_shortname" length="20"></property>
+		<property name="c_id" length="20"></property>
+		<property name="c_industy" length="20"></property>
+		<property name="c_type" length="20"></property>
+		<property name="c_region" length="20"></property>
+		<property name="c_probability" length="20"></property>
+		<property name="c_status" length="20"></property>
+		<property name="c_qq" length="20"></property>
+		<property name="c_extend1"></property>
+		<property name="c_extend2"></property>
+		<property name="c_extend3"></property>
+		<property name="c_extend4"></property>
+		<property name="c_extend5"></property>
+		
+		<set name="setLinkMan" inverse="true" cascade="save-update,delete" >
+			<key column="custcode"/>
+			<one-to-many class="cn.lyl.entity.LinkMan"/>
+		</set>
+	</class>
+
+</hibernate-mapping>

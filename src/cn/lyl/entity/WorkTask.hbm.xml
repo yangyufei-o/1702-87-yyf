@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.hibernate.tutorial.hbm">
+
+	<class name="cn.lyl.entity.WorkTask" table="WorkTask">
+		<id name="t_id">
+			<generator class="native"></generator>
+		</id>
+		<property name="t_theme" length="30"></property>
+		
+		<many-to-one name="employee" class="cn.lyl.entity.Employee" column="empcode"></many-to-one>		
+		<property name="t_type" length="30"></property>
+		<property name="t_project" length="30"></property>
+		<property name="t_principal" length="30"></property>
+		<property name="t_part" length="30"></property>
+		<property name="t_found" length="30"></property>
+		<property name="t_deadtime" length="30"></property>
+		<property name="t_status" length="30"></property>
+		<property name="t_important" length="30"></property>
+		<property name="t_level" length="30"></property>
+		<property name="t_send" length="30"></property>
+		<property name="t_extend1"></property>
+		<property name="t_extend2"></property>
+		<property name="t_extend3"></property>
+		<property name="t_extend4"></property>
+		<property name="t_extend5"></property>
+	</class>
+
+</hibernate-mapping>

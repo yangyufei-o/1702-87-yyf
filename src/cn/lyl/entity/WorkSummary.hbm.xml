@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.hibernate.tutorial.hbm">
+
+	<class name="cn.lyl.entity.WorkSummary" table="workSummary">
+		<id name="s_id">
+			<generator class="native"></generator>
+		</id>
+		<property name="s_name" length="20"></property>
+		<many-to-one name="employee" class="cn.lyl.entity.Employee" column="empcode"></many-to-one>
+		<property name="s_part" length="20"></property>
+		<property name="s_found" length="20"></property>
+		<property name="s_type" length="20"></property>
+		<property name="s_start" length="20"></property>
+		<property name="s_end" length="20"></property>
+		<property name="s_theme" length="20"></property>
+		<property name="s_detail" type="text"></property>
+		<property name="s_status" length="20"></property>
+		<property name="s_progress" length="20"></property>
+		<property name="s_extend1"></property>
+		<property name="s_extend2"></property>
+		<property name="s_extend3"></property>
+		<property name="s_extend4"></property>
+		<property name="s_extend5"></property>
+
+	</class>
+</hibernate-mapping>
